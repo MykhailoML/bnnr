@@ -891,7 +891,7 @@ def run_condition(condition: str, base_state: dict[str, Any], spec: DatasetSpec,
         #   - no l1 regularisation on the retrained last layer
         #   - no averaging over multiple retrains
         #   - a weaker base feature extractor than the original paper's
-    
+
         bal = group_balanced_subset(val_ex, seed, args.dfr_per_group)
         bal_loader = DataLoader(build_torch_ds(bal, args.img_size, True),
                                 batch_size=args.batch_size, shuffle=True, num_workers=nw)
